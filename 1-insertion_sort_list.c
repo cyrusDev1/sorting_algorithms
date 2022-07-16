@@ -9,7 +9,7 @@
  * Return: no return
  */
 
-void swap(listint_t **head, listint_t **node1, listint_t *node2)
+void swap_n(listint_t **head, listint_t **node1, listint_t *node2)
 {
 	(*node1)->next = node2->next;
 	if (node2->next != NULL)
@@ -48,7 +48,7 @@ void insertion_sort_list(listint_t **list)
 		insert = iter->prev;
 		while (insert != NULL && iter->n < insert->n)
 		{
-			swap(list, &insert, iter);
+			swap_n(list, &insert, iter);
 			print_list((const listint_t *)*list);
 		}
 	}
