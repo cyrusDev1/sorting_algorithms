@@ -3,8 +3,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
-#include <stdbool.h>
+
+/**
+ * enum bool - boolean values
+ * @false: equals 0
+ * @true: esuals 1
+ */
+
+typedef enum bool
+{
+	false = 0,
+	true
+} bool;
 
 /**
  * struct listint_s - Doubly linked list node
