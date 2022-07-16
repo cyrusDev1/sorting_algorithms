@@ -5,7 +5,7 @@
  * swap - swap two nodes
  * @head: pointer to the head of dll
  * @node1: pointer to the first node to swap
- * @node2; second node to swap
+ * @node2: second node to swap
  * Return: no return
  */
 
