@@ -31,7 +31,7 @@ void shell_sort(int *array, size_t size)
 	if (array == NULL || size <= 2)
 		return;
 
-	while (gap < size / 3)
+	while (gap < size)
 		gap = gap * 3 + 1;
 
 	for (; gap > 0; gap /= 3)
@@ -43,6 +43,7 @@ void shell_sort(int *array, size_t size)
 				swap_value(array + j, array + (j - gap));
 			}
 		}
-		print_array(array, size);
+		if (gap <= size)
+			print_array(array, size);
 	}
 }
