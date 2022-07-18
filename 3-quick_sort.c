@@ -1,6 +1,22 @@
 #include "sort.h"
 
 /**
+ * swap_value - swap tow values
+ * @val1: first value to swap
+ * @val2: second value to swap
+ * Return no return
+ */
+
+void swap_value(int *val1, int *val2)
+{
+	int tmp;
+
+	tmp = *val1;
+	*val1 = *val2;
+	*val2 = tmp;
+}
+
+/**
  * lomuto - partition an array into two parts based on a
  * given condition
  * @array: array to sorted
@@ -13,7 +29,7 @@
 int lomuto(int *array, int size, int start, int end)
 {
 	int pivot_value = array[end];
-	int i = start, j = 0, tmp = 0;
+	int i = start, j = 0;
 
 	for (j = start; j < end; j++)
 	{
@@ -21,9 +37,7 @@ int lomuto(int *array, int size, int start, int end)
 		{
 			if (i < j)
 			{
-				tmp =  array[i];
-				array[i] = array[j];
-				array[j] =  tmp;
+				swap_value(array + i, array + j);
 				print_array(array, size);
 			}
 			i++;
@@ -32,13 +46,9 @@ int lomuto(int *array, int size, int start, int end)
 
 	if (array[i] > array[end])
 	{
-		tmp = array[i];
-		array[i] = array[end];
-		array[end] = tmp;
+		swap_value(array + i, array + end);
 		print_array(array, size);
 	}
-
-
 
 	return (i);
 }
