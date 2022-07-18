@@ -19,17 +19,26 @@ int lomuto(int *array, int size, int start, int end)
 	{
 		if (array[j] <= pivot_value)
 		{
-			tmp =  array[i];
-			array[i] = array[j];
-			array[j] =  tmp;
+			if (i < j)
+			{
+				tmp =  array[i];
+				array[i] = array[j];
+				array[j] =  tmp;
+				print_array(array, size);
+			}
 			i++;
 		}
 	}
 
-	tmp = array[i];
-	array[i] = array[end];
-	array[end] = tmp;
-	print_array(array, size);
+	if (array[i] > array[end])
+	{
+		tmp = array[i];
+		array[i] = array[end];
+		array[end] = tmp;
+		print_array(array, size);
+	}
+
+
 
 	return (i);
 }
