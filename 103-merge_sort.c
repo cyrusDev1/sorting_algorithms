@@ -57,4 +57,5 @@ void merge_sort(int *array, size_t size)
 		return;
 
 	divide(array, size, 0, size - 1);
+	counting_sort(array, size);
 }
