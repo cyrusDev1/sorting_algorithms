@@ -71,7 +71,7 @@ void hoare_sort(int *array, size_t size, int start, int end)
 }
 
 /**
- * quick_sort - sorts an array of integers in ascending order
+ * quick_sort_hoare - sorts an array of integers in ascending order
  * using the quick sort algorithm
  * @array: array to sorted
  * @size: size of array
