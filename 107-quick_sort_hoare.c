@@ -31,12 +31,15 @@ int hoare(int *array, int size, int start, int end)
 	int pivot_value = array[start];
 	int i, j;
 
-	for (i = start, j = end; i < j;)
+	for (i = start - 1, j = end + 1; i < j;)
 	{
-		while (array[i] < pivot_value)
+		do {
 			i++;
-		while (array[j] > pivot_value)
+		} while (array[i] < pivot_value);
+		do {
 			j--;
+		} while (array[j] > pivot_value);
+
 		if (i < j)
 		{
 			swap_value(array + j,  array + i);
