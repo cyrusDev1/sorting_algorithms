@@ -29,19 +29,21 @@ void swap_value(int *val1, int *val2)
 int hoare(int *array, int size, int start, int end)
 {
 	int pivot_value = array[start];
-	int i = start, j = end;
+	int i, j;
 
-	while (1)
+	for (i = start, j = end; i < j;)
 	{
 		while (array[i] < pivot_value)
 			i++;
 		while (array[j] > pivot_value)
 			j--;
-		if (i >= j)
-			return (j);
-		swap_value(array + j,  array + i);
-		print_array(array, size);
+		if (i < j)
+		{
+			swap_value(array + j,  array + i);
+			print_array(array, size);
+		}
 	}
+	return (j);
 }
 
 /**
