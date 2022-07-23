@@ -28,7 +28,7 @@ void swap_value(int *val1, int *val2)
 
 int hoare(int *array, int size, int start, int end)
 {
-	int pivot_value = array[start];
+	int pivot_value = array[end];
 	int i, j;
 
 	for (i = start - 1, j = end + 1; i < j;)
@@ -46,7 +46,7 @@ int hoare(int *array, int size, int start, int end)
 			print_array(array, size);
 		}
 	}
-	return (j);
+	return (i);
 }
 
 /**
@@ -66,7 +66,7 @@ void hoare_sort(int *array, size_t size, int start, int end)
 	{
 		pivot = hoare(array, size, start, end);
 		hoare_sort(array, size, start, pivot - 1);
-		hoare_sort(array, size, pivot + 1, end);
+		hoare_sort(array, size, pivot, end);
 	}
 }
 
